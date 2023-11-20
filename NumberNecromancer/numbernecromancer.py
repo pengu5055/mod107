@@ -34,16 +34,18 @@ class NumberNecromancer:
         domain : Tuple[float, float], optional
             The domain to sample over, by default (0, 1).
         """
-
-        # Initialize Dask
-        initialize()
-        self.client = Client(serializers=['pickle'])
-
         # Get the number of slaves
         comm = MPI.COMM_WORLD
         self.size = comm.Get_size() 
         self.slaves = self.size - 2 
         self.rank = comm.Get_rank()
+
+        # Initialize Dask
+        initialize()
+        # Run dask-scheduler in terminal first
+        self.client = Client("tcp://192.168.64.101:8786")
+
+
 
         # Set the condition function
         self.condition_function = condition_function
@@ -67,7 +69,7 @@ class NumberNecromancer:
         self.samples = da.random.uniform(self.domain[0], self.domain[1],
                                         (self.num_samples, self.num_dimensions),
                                         chunks=(self.num_samples // self.slaves, self.num_dimensions))
-    
+        print(self.samples)
         
         return self.samples
     
@@ -91,7 +93,7 @@ class NumberNecromancer:
         Compute the Monte Carlo integration.
         """
         # Compute the condition
-        self.satisfied = self.satisfied.compute()
+        self.satisfied = self.satisfied.compute(chunks=(self.num_samples // self.slaves, self.num_dimensions))
         ## TODO: Currently computing is not parallelized. Only using 1 worker.
 
         return self.satisfied, self.num_samples

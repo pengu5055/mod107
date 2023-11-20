@@ -3,12 +3,9 @@ Check my sanity.
 """
 import time
 import numpy as np
-from numbernecromancer import NumberNecromancer
-import dask.array as da
-from time import sleep
+from necromancer import NumberNecromancer
 
 def condition(pairs):
-    print("\n\n CALLED \n\n\n")
     results = []
     for pair in pairs:
         x, y = pair
@@ -17,15 +14,17 @@ def condition(pairs):
 
 # Create the necromancer
 nn = NumberNecromancer(condition, num_samples=10000000, num_dimensions=2, domain=[0, 1])
-nn.setup()
 ti = time.time()
-n_in, n_tot = nn.compute()
+n_in, n_tot = nn.run()
+n_in = np.sum(n_in)
+n_tot = np.sum(n_tot)
 tf = time.time() - ti
 
-print("\n-------RESULTS-------\n")
-print(f"Computation took: {tf} s on {nn.slaves} slaves.")
-print(f"n_in: {n_in}, n_tot: {n_tot}")
-print(f"By our logic pi is {4 * n_in / n_tot}")
-print("\n---------------------\n")
+if nn.rank == 0:
+    print("\n-------RESULTS-------")
+    print(f"Computation took: {tf} s on {nn.size} slaves.")
+    print(f"n_in: {n_in}, n_tot: {n_tot}")
+    print(f"By our logic pi is {4 * n_in / n_tot}")
+    print("\n---------------------")
 
 nn.burry()
