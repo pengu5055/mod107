@@ -10,6 +10,7 @@ import dask.array as da
 from typing import Union, Tuple, List, Callable
 import subprocess
 from mpi4py import MPI
+import dask
 
 class NumberNecromancer:
     def __init__(self,
@@ -36,11 +37,12 @@ class NumberNecromancer:
 
         # Initialize Dask
         initialize()
-        self.client = Client()
+        self.client = Client(serializers=['pickle'])
 
         # Get the number of slaves
         comm = MPI.COMM_WORLD
-        self.slaves = comm.Get_size()
+        self.size = comm.Get_size() 
+        self.slaves = self.size - 2 
         self.rank = comm.Get_rank()
 
         # Set the condition function
@@ -48,7 +50,6 @@ class NumberNecromancer:
 
         # Set the number of samples and dimensions
         self.num_samples = num_samples
-        self.num_samples_node = int(num_samples / self.slaves)
         self.num_dimensions = num_dimensions
         self.domain = domain
     
@@ -64,44 +65,34 @@ class NumberNecromancer:
         """
         # Generate the samples
         self.samples = da.random.uniform(self.domain[0], self.domain[1],
-                                        (self.num_samples_node, self.num_dimensions))
+                                        (self.num_samples, self.num_dimensions),
+                                        chunks=(self.num_samples // self.slaves, self.num_dimensions))
+    
         
         return self.samples
-
-    def _check_samples(self, samples: np.ndarray) -> int:
-        """
-        Check the samples against the condition function.
-
-        Parameters
-        ----------
-        samples : np.ndarray
-            The samples to check.
-
-        Returns
-        -------
-        int
-            The number of samples that satisfy the condition.
-        """
-
-        # Check the samples
-        self.satisfied_samples = self.condition_function(samples)
-        result = self.satisfied_samples.sum()
-
-        return result
-
+    
     def setup(self):
         """
         Setup the Monte Carlo integration.
         """
-
         # Generate the samples
-        self._generate_samples()
+        samples = self._generate_samples()
 
-        # Submit the task
-        result_future = self.client.submit(self._check_samples, self.samples)
+        # Compute the condition
+        satisfied = dask.delayed(self.condition_function)(samples)
 
-        # Wait for the task to finish
-        self.satisfied = self.client.gather(result_future)
+        # Compute the number of satisfied samples
+        self.satisfied = satisfied.sum()
+        
+        return self.satisfied, self.num_samples
+
+    def compute(self):
+        """
+        Compute the Monte Carlo integration.
+        """
+        # Compute the condition
+        self.satisfied = self.satisfied.compute()
+        ## TODO: Currently computing is not parallelized. Only using 1 worker.
 
         return self.satisfied, self.num_samples
 
@@ -112,29 +103,3 @@ class NumberNecromancer:
 
         # Close the client
         self.client.close()
-
-
-def init_necromancy(slaves: int):
-    """
-    Initialize the necromancy. Set's up the MPI processes.
-
-    Parameters
-    ----------
-    integrator : NumberNecromancer
-        The integrator to use.
-    """
-    comm = MPI.COMM_WORLD
-    rank = comm.Get_rank()
-
-    if rank == 0:
-        # Create the command
-        command = f"mpiexec -np {slaves} python {__file__}"
-
-        # Run the command
-        subprocess.run(command, shell=True)
-
-        # Exit 
-        exit()
-    else:
-        pass
-
