@@ -16,23 +16,32 @@ def condition(pairs):
         results.append(np.sqrt(np.abs(x)) + np.sqrt(np.abs(y)) + np.sqrt(np.abs(z)) <= 1)
     return np.array(results)
 
+# EXAMPLE:
 # Call buddy necromancer
-nn = NumberNecromancer(condition, num_samples=10000000, num_dimensions=3, domain=[-1, 1])
+# nn = NumberNecromancer(condition, num_samples=10000000, num_dimensions=3, domain=[-1, 1])
 # Run the necromancer
-n_in, n_tot, t = nn.run()
+# n_in, n_tot, t = nn.run()
 
 # --- Plot 1: Scaling with N ---
 if True:
     N_range = np.logspace(2, 20, 100)
-    t_range = []
+    # Result dispersion across nodes
+    N_dispersion = []  # Slightly deviates due to floor division when chunking
+    t_exec_dispersion = []
     result_dispersion = []
-    for N in N_range:
-        nn.num_samples = int(N)
-        ti = time.time()
-        n_in, n_tot = nn.run()
-        tf = time.time() - ti
-        t_range.append(tf)
-
+    for i, N in enumerate(N_range):
+        nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1])
+        if nn.rank == 0:
+            print(f"Running {i + 1} of {len(N_range)}")
+        n_in, n_tot, t_exec = nn.run()
+        N_dispersion.append(n_tot)
+        result_dispersion.append(n_in)
+        t_exec_dispersion.append(t_exec)
+    
+    np.savez("N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
+             t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
+    
+quit()
 
 # From here process only on rank 0
 if nn.rank == 0:
