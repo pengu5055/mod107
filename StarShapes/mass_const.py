@@ -40,7 +40,7 @@ if True:
     
     np.savez("N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
              t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
-    
+nn.burry()
 quit()
 
 # From here process only on rank 0
