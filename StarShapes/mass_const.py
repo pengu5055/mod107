@@ -118,6 +118,7 @@ ax_add3.axhline(np.mean(sr), color="k", ls="--", label="Mean Success Rate")
 ax_add3.axhline(np.mean(sr) + np.std(sr), color="k", ls=":")
 ax_add3.fill_between(np.linspace(0, 153, len(sr)), np.mean(sr) - np.std(sr), np.mean(sr) + np.std(sr),
                      label="1$\sigma$ Band", color=colors2[10], alpha=0.2)
+ax_add3.plot(nodes, sr, color=colors2[100], lw=0.5, alpha=0.2)
 ax_add3.axhline(np.mean(sr) - np.std(sr), color="k", ls=":")
 ax_add3.set_xlim(0, 153)
 ax_add3.legend(loc="upper right", frameon=False)
