@@ -24,7 +24,7 @@ def condition(pairs):
 
 # --- Plot 1: Scaling with N ---
 if True:
-    N_range = np.logspace(2, 12, 50)
+    N_range = np.logspace(2, 10, 20)
     # Result dispersion across nodes
     N_dispersion = []  # Slightly deviates due to floor division when chunking
     t_exec_dispersion = []

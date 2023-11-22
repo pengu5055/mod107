@@ -1,6 +1,6 @@
 """
-Calculate the angular momentum of the star shape that was
-given in the task.
+Calculate the mass of the star shape that was given in 
+the task this time with a radial density profile.
 """
 import numpy as np
 from necromancer import NumberNecromancer
@@ -9,6 +9,8 @@ import os
 # Consts
 V_ROT = 1
 R_MAX = 1
+P_DEF = 0
+N = 1e7
 
 def v_tangential(x, y, z):
     '''
@@ -24,22 +26,22 @@ def condition(pairs):
         x, y, z = pair
         check = np.sqrt(np.abs(x)) + np.sqrt(np.abs(y)) + np.sqrt(np.abs(z)) <= 1
         if check:
-            np.sqrt(x**2 + y**2 + z**2) * v_tangential(x, y, z)
+            1 * np.sqrt(x**2 + y**2 + z**2)**P_DEF
         results.append(np.sqrt(np.abs(x)) + np.sqrt(np.abs(y)) + np.sqrt(np.abs(z)) <= 1)
     return np.array(results)
 
-# --- Plot 1: Scaling with N ---
+# --- Plot 1: Scaling with P ---
 if True:
-    N_range = np.logspace(2, 8, 20)
+    P_range = np.linspace(0, 5, 100)
     # Result dispersion across nodes
     N_dispersion = []  # Slightly deviates due to floor division when chunking
     t_exec_dispersion = []
     result_dispersion = []
     integral_dispersion = []
-    for i, N in enumerate(N_range):
-        nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1], quiet_slaves=True)
+    for i, N in enumerate(P_range):
+        nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1])
         if nn.rank == 0:
-            print(f"Running {i + 1} of {len(N_range)}")
+            print(f"Running {i + 1} of {len(P_range)}")
         n_in, n_tot, t_exec, res = nn.run()
         if nn.rank == 0:
             N_dispersion.append(n_tot)
@@ -50,7 +52,7 @@ if True:
     if nn.rank == 0:
         if not os.path.exists("./StarShapes/Results"):
             os.mkdir("./StarShapes/Results")
-        np.savez("./StarShapes/Results/N_scaling_angular.npz", N_range=N_range, N_dispersion=N_dispersion, 
+        np.savez("./StarShapes/Results/P_scaling_angular_radial.npz", N_range=P_range, N_dispersion=N_dispersion, 
                 t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion,
                 integral_dispersion=integral_dispersion)
 nn.burry()
