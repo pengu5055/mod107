@@ -17,7 +17,7 @@ N_dispersion = []  # Slightly deviates due to floor division when chunking
 result_dispersion = []
 t_exec_dispersion = []
 # Gather data
-if True:
+if False:
     node_range = np.arange(1, 152)
     # Result dispersion across nodes
     result_dispersion = []

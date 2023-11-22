@@ -26,8 +26,8 @@ def condition(pairs):
         x, y, z = pair
         check = np.sqrt(np.abs(x)) + np.sqrt(np.abs(y)) + np.sqrt(np.abs(z)) <= 1
         if check:
-            np.sqrt(x**2 + y**2 + z**2) * np.sqrt(x**2 + y**2 + z**2)**P_DEF * v_tangential(x, y, z)
-        results.append(np.sqrt(np.abs(x)) + np.sqrt(np.abs(y)) + np.sqrt(np.abs(z)) <= 1)
+            integrand = np.sqrt(x**2 + y**2 + z**2) * np.sqrt(x**2 + y**2 + z**2)**P_DEF * v_tangential(x, y, z)
+        results.append(integrand)
     return np.array(results)
 
 # --- Plot 1: Scaling with P ---
@@ -43,11 +43,10 @@ if True:
         if nn.rank == 0:
             print(f"Running {i + 1} of {len(P_range)}")
         n_in, n_tot, t_exec, res = nn.run()
-        if nn.rank == 0:
-            N_dispersion.append(n_tot)
-            result_dispersion.append(n_in)
-            integral_dispersion.append(res)
-            t_exec_dispersion.append(t_exec)
+        N_dispersion.append(n_tot)
+        result_dispersion.append(n_in)
+        integral_dispersion.append(res)
+        t_exec_dispersion.append(t_exec)
 
     if nn.rank == 0:
         if not os.path.exists("./StarShapes/Results"):

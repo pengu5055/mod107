@@ -85,7 +85,7 @@ fig, ax = plt.subplots(1, 2, figsize=(10, 5))
 # Sum the dispersion across nodes
 N_ = np.sum(N_dispersion, axis=1)
 result = np.sum(result_dispersion, axis=1)
-t_exec = np.sum(t_exec_dispersion, axis=1)
+t_exec = np.average(t_exec_dispersion, axis=1)
 
 # Plot 0
 ax[0].plot(N_range, N_range, label="Samples Ordered", ls="--", color="#eb096f")
