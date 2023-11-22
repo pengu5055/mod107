@@ -39,6 +39,14 @@ if True:
         # This should be constant but just in case
         N_dispersion.append(n_tot)
 
-if not os.path.exists("./StarShapes/Results"):
-            os.mkdir("./StarShapes/Results")
-np.savez("./StarShapes/Results/node_scaling.npz", node_range=node_range, N_dispersion=N_dispersion)
+    if not os.path.exists("./StarShapes/Results"):
+                os.mkdir("./StarShapes/Results")
+    np.savez("./StarShapes/Results/node_scaling.npz", node_range=node_range, N_dispersion=N_dispersion,
+              t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
+else:
+    # Load data
+    with np.load("./StarShapes/Results/node_scaling.npz") as data:
+        node_range = data["node_range"]
+        N_dispersion = data["N_dispersion"]
+# Plot
+
