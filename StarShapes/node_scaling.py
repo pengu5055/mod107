@@ -23,8 +23,6 @@ t_exec_dispersion = []
 if True:
     node_range = np.arange(1, 152)
     # Result dispersion across nodes
-    result_dispersion = []
-    t_exec_dispersion = []
     for i, node in enumerate(node_range):
         print(f"Running {i + 1} of {len(node_range)}")
         # Spawn the process
