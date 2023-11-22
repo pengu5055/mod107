@@ -18,7 +18,7 @@ result_dispersion = []
 t_exec_dispersion = []
 # Gather data
 if True:
-    node_range = np.arange(1, 144)
+    node_range = np.arange(1, 152)
     # Result dispersion across nodes
     result_dispersion = []
     t_exec_dispersion = []

@@ -34,18 +34,21 @@ if True:
     N_dispersion = []  # Slightly deviates due to floor division when chunking
     t_exec_dispersion = []
     result_dispersion = []
+    integral_dispersion = []
     for i, N in enumerate(N_range):
         nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1])
         if nn.rank == 0:
             print(f"Running {i + 1} of {len(N_range)}")
-        n_in, n_tot, t_exec = nn.run()
+        n_in, n_tot, t_exec, res = nn.run()
         N_dispersion.append(n_tot)
         result_dispersion.append(n_in)
+        integral_dispersion.append(res)
         t_exec_dispersion.append(t_exec)
 
     if nn.rank == 0:
         np.savez("./StarShapes/Results/N_scaling_angular.npz", N_range=N_range, N_dispersion=N_dispersion, 
-                t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
+                t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion,
+                integral_dispersion=integral_dispersion)
 nn.burry()
 quit()
 
