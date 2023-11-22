@@ -14,13 +14,14 @@ def condition(pairs):
 
 # Create the necromancer
 nn = NumberNecromancer(condition, num_samples=10000000, num_dimensions=2, domain=[0, 1])
-n_in, n_tot, t_exec = nn.run()
+n_in, n_tot, t_exec, res = nn.run()
 n_in = np.sum(n_in)
 n_tot = np.sum(n_tot)
 
 if nn.rank == 0:
     print("\n-------RESULTS-------")  
     print(f"n_in: {n_in}, n_tot: {n_tot}")
+    print(f"With res I got {res}")
     print(f"By our logic pi is {4 * n_in / n_tot}")
     print(f"Computation took: {t_exec} s on {nn.size} slaves.")
     print("\n---------------------")

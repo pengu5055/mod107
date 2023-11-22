@@ -88,7 +88,8 @@ class NumberNecromancer:
         results = self._check_condition()
 
         # Reduce the results
-        n_in = np.sum(results)
+        n_in = np.count_nonzero(results)
+        result = np.sum(results)
         # print(f"Rank {self.rank} of {self.size} found {n_in} in samples")
 
         # Get execution time
@@ -96,6 +97,9 @@ class NumberNecromancer:
 
         # Gather the total number of in samples
         n_in_tot = self.comm.gather(n_in, root=0)
+
+        # Gather results
+        results_tot = self.comm.gather(result, root=0)
         
         # Gather the execution time
         t_exec_tot = self.comm.gather(t_exec, root=0)
@@ -104,9 +108,9 @@ class NumberNecromancer:
         n_tot = np.repeat(np.array(self.sample_chunk), self.size)
 
         if self.rank == 0:
-            return n_in_tot, n_tot, t_exec_tot
+            return n_in_tot, n_tot, t_exec_tot, results_tot
         else:
-            return None, None, t_exec
+            return None, None, t_exec, None
     
     def burry(self):
         """

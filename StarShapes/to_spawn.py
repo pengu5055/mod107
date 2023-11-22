@@ -15,7 +15,7 @@ def condition(pairs):
     return np.array(results)
 
 nn = NumberNecromancer(condition, num_samples=1e7, num_dimensions=3, domain=[-1, 1])
-n_in, n_tot, t_exec = nn.run()
+n_in, n_tot, t_exec, _ = nn.run()
 
 # From here process only on rank 0
 if nn.rank == 0:

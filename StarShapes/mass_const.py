@@ -33,7 +33,7 @@ if True:
         nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1])
         if nn.rank == 0:
             print(f"Running {i + 1} of {len(N_range)}")
-        n_in, n_tot, t_exec = nn.run()
+        n_in, n_tot, t_exec, _ = nn.run()
         N_dispersion.append(n_tot)
         result_dispersion.append(n_in)
         t_exec_dispersion.append(t_exec)
