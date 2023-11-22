@@ -5,7 +5,7 @@ is constant throughout the shape.
 """
 import numpy as np
 from necromancer import NumberNecromancer
-import time
+import os
 
 # Let's start of with 3 dimensions and complicate it if time allows
 # Maybe display the shape in 3D just for fun
@@ -39,22 +39,8 @@ if True:
         t_exec_dispersion.append(t_exec)
 
     if nn.rank == 0:
+        if not os.path.exists("./StarShapes/Results"):
+            os.mkdir("./StarShapes/Results")
         np.savez("./StarShapes/Results/N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
                 t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
 nn.burry()
-quit()
-
-# From here process only on rank 0
-if nn.rank == 0:
-    # Reduce the results
-    n_in = np.sum(n_in)
-    n_tot = np.sum(n_tot)
-
-    # Calculate the mass
-    mass = n_in / n_tot
-    print(f"The mass/volume of the shape is {mass} units.")
-    print(f"Computation took {t} s on {nn.size} slaves.")
-
-# Let the dead rest again
-nn.burry()
-

@@ -4,6 +4,7 @@ given in the task.
 """
 import numpy as np
 from necromancer import NumberNecromancer
+import os
 
 # Consts
 V_ROT = 1
@@ -46,9 +47,9 @@ if True:
         t_exec_dispersion.append(t_exec)
 
     if nn.rank == 0:
+        if not os.path.exists("./StarShapes/Results"):
+            os.mkdir("./StarShapes/Results")
         np.savez("./StarShapes/Results/N_scaling_angular.npz", N_range=N_range, N_dispersion=N_dispersion, 
                 t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion,
                 integral_dispersion=integral_dispersion)
 nn.burry()
-quit()
-
