@@ -27,8 +27,7 @@ with np.load("./StarShapes/Results/P_scaling_angular_radial.npz") as data:
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
 
 # Sum the dispersion across nodes
-print(integral_dispersion_angular)
-ax[0].imshow(P_range, aspect="auto", origin="lower")
+ax[0].imshow(t_exec_dispersion, aspect="auto", origin="lower")
 
 plt.show()
 
