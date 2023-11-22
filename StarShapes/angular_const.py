@@ -150,5 +150,38 @@ ax[1].set_ylabel("Accepted / Total Samples")
 
 
 plt.tight_layout()
+plt.savefig("./StarShapes/Images/angular_const.png", dpi=700)
+plt.show()
+
+fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+nodes = np.arange(1, 152)
+
+# Plot 1: Angular momentum Dispersion
+cm_0 = pl.scientific.sequential.Tokyo_20.mpl_colormap
+norm = mpl.colors.SymLogNorm(vmin=integral_dispersion.min(), vmax=integral_dispersion.max(), linthresh=1)
+sm = plt.cm.ScalarMappable(cmap=cm_0, norm=norm)
+cbar = fig.colorbar(sm, ax=ax[0])
+cbar.set_label("Proportional to\nangular momentum [arb. units]")
+
+ax[0].imshow(integral_dispersion, extent=[nodes[0], nodes[-1], N_[0], N_[-1]], aspect="auto", origin="lower", cmap=cm_0, norm=norm)
+ax[0].set_xlabel("Node")
+ax[0].set_ylabel("Number of ordered samples")
+ax[0].set_title("Distribution of angular\nmomentum across nodes")
+
+# Plot 2: Execution time dispersion
+cm_1 = pl.scientific.sequential.Acton_20.mpl_colormap
+norm = mpl.colors.LogNorm(vmin=t_exec_dispersion.min(), vmax=t_exec_dispersion.max())
+sm = plt.cm.ScalarMappable(cmap=cm_1, norm=norm)
+cbar = fig.colorbar(sm, ax=ax[1])
+cbar.set_label("Execution time [s]")
+
+ax[1].imshow(t_exec_dispersion, extent=[nodes[0], nodes[-1], N_[0], N_[-1]], aspect="auto", origin="lower", cmap=cm_1, norm=norm)
+ax[1].set_xlabel("Node")
+ax[1].set_ylabel("Number of ordered samples")
+ax[1].set_title("Distribution of execution time across nodes")
+
+
+plt.tight_layout()
+plt.savefig("./StarShapes/Images/angular_const_heatmaps.png", dpi=700)
 plt.show()
 
