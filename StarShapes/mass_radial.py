@@ -52,7 +52,7 @@ if True:
     if nn.rank == 0:
         if not os.path.exists("./StarShapes/Results"):
             os.mkdir("./StarShapes/Results")
-        np.savez("./StarShapes/Results/P_scaling_angular_radial.npz", N_range=P_range, N_dispersion=N_dispersion, 
+        np.savez("./StarShapes/Results/P_scaling_radial.npz", N_range=P_range, N_dispersion=N_dispersion, 
                 t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion,
                 integral_dispersion=integral_dispersion)
 nn.burry()
