@@ -25,11 +25,11 @@ if True:
     for i, node in enumerate(node_range):
         print(f"Running {i + 1} of {len(node_range)}")
         # Spawn the process
-        subprocess.run(["mpiexec", "-n", str(node), "python", "to_spawn.py"])
+        subprocess.call(["mpiexec", "-n", str(node), "python", "to_spawn.py"])
         # Load the data
         with open("./.tmp/temp.txt", "r") as f:
             n_in = list(f.readline())
-            n_tot = int(f.readline())
+            n_tot = list(f.readline())
             t_exec = list(f.readline())
         
         # Append the data

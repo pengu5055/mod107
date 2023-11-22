@@ -6,6 +6,10 @@ is constant throughout the shape.
 import numpy as np
 from necromancer import NumberNecromancer
 import os
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import palettable as pl
+import cmasher as cmr
 
 # Let's start of with 3 dimensions and complicate it if time allows
 # Maybe display the shape in 3D just for fun
@@ -23,7 +27,7 @@ def condition(pairs):
 # n_in, n_tot, t = nn.run()
 
 # --- Plot 1: Scaling with N ---
-if True:
+if False:
     N_range = np.logspace(2, 10, 20)
     # Result dispersion across nodes
     N_dispersion = []  # Slightly deviates due to floor division when chunking
@@ -44,4 +48,26 @@ if True:
             os.mkdir("./StarShapes/Results")
         np.savez("./StarShapes/Results/N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
                 t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
-nn.burry()
+    nn.burry()
+    exit()
+
+else:
+    # Load data
+    with np.load("./StarShapes/Results/N_scaling.npz") as data:
+        N_range = data["N_range"]
+        N_dispersion = data["N_dispersion"]
+        t_exec_dispersion = data["t_exec_dispersion"]
+        result_dispersion = data["result_dispersion"]
+    
+# Plot
+plt.rcParams["font.family"] = "IBM Plex Serif"
+plt.rcParams["font.size"] = 10
+plt.rcParams["axes.labelsize"] = 12
+plt.rcParams["axes.labelweight"] = "medium"
+plt.rcParams["axes.titlesize"] = 16
+plt.rcParams["axes.titleweight"] = "medium"
+
+cm = pl.colorbrewer.sequential.PuRd_7.mpl_colormap
+colors = cmr.take_cmap_colors(cm, 7, cmap_range=(0.15, 0.85), return_fmt="hex")
+
+fig, ax = plt.subplots(1, 2, figsize=(10, 5))

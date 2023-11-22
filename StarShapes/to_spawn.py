@@ -20,7 +20,7 @@ n_in, n_tot, t_exec, _ = nn.run()
 # From here process only on rank 0
 if nn.rank == 0:
     # Reduce the results
-    with open("./.tmp/temp.txt", "wr") as f:
+    with open("./.tmp/temp.txt", "w") as f:
         f.write(f"{n_in}\n{n_tot}\n{t_exec}")
 
 # Let the dead rest again
