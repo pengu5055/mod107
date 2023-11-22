@@ -108,7 +108,7 @@ cbar = fig.colorbar(sm, ax=ax[1])
 cbar.set_label("Execution time [s]")
 
 ax[1].imshow(t_exec_dispersion, extent=[nodes[0], nodes[-1], P_range[0], P_range[-1]], aspect="auto", origin="lower", cmap=cm_1, norm=norm)
-ax[1].set_xlabel("Number of nodes")
+ax[1].set_xlabel("Node")
 ax[1].set_ylabel("Value of $P$")
 ax[1].set_title("Distribution of execution time across nodes")
 
@@ -125,9 +125,9 @@ t_avg = np.average(t_exec_dispersion, axis=1)
 ax_add = ax[0].twinx()
 
 ax[0].plot(P_range, values, color=colors[4], label="Mass of star shape")
-ax_add.scatter(P_range, t_avg, color=colors[2], label="Average execution time", s=2)
 ax_add.plot(P_range, t_avg, color=colors[0], lw=0.7, alpha=0.3)
 ax_add.axhline(np.mean(t_avg), color="k", ls="--", label="Mean execution time", alpha=0.4)
+ax_add.scatter(P_range, t_avg, color=colors[2], label="Average execution time", s=2)
 
 
 ax[0].set_facecolor("#ebf9fc")
@@ -137,6 +137,22 @@ ax_add.set_ylabel("Execution time [s]")
 ax[0].set_ylabel("Mass [arb. units]")
 ax[0].legend(loc="lower left", frameon=False)
 ax_add.legend(loc="upper right", frameon=False, ncols=2, fontsize=9)
+ax[0].set_title("Mass of star shape for different values of $P$")
+
+# Plot 2: Success rate per node
+cm_2 = pl.scientific.sequential.Tokyo_20.mpl_colormap
+sr = result_dispersion / N_dispersion
+
+norm = mpl.colors.Normalize(vmin=sr.min(), vmax=sr.max())
+sm = plt.cm.ScalarMappable(cmap=cm_2, norm=norm)
+cbar = fig.colorbar(sm, ax=ax[1])
+cbar.set_label("Number of accepted samples / Generated samples")
+
+ax[1].imshow(sr, extent=[nodes[0], nodes[-1], P_range[0], P_range[-1]], aspect="auto", origin="lower", cmap=cm_2, norm=norm)
+ax[1].set_xlabel("Node")
+ax[1].set_ylabel("Value of $P$")
+ax[1].set_title("Success rate across nodes")
+
 
 plt.tight_layout()
 plt.savefig("./StarShapes/Images/mass_radial.png", dpi=700)
