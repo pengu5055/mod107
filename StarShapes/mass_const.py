@@ -37,9 +37,10 @@ if True:
         N_dispersion.append(n_tot)
         result_dispersion.append(n_in)
         t_exec_dispersion.append(t_exec)
-    
-    np.savez("./StarShapes/Results/N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
-             t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
+
+    if nn.rank == 0:
+        np.savez("./StarShapes/Results/N_scaling.npz", N_range=N_range, N_dispersion=N_dispersion, 
+                t_exec_dispersion=t_exec_dispersion, result_dispersion=result_dispersion)
 nn.burry()
 quit()
 
