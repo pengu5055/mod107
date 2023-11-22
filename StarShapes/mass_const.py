@@ -30,13 +30,14 @@ if True:
     t_exec_dispersion = []
     result_dispersion = []
     for i, N in enumerate(N_range):
-        nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1])
+        nn = NumberNecromancer(condition, num_samples=N, num_dimensions=3, domain=[-1, 1], quiet_slaves=True)
         if nn.rank == 0:
             print(f"Running {i + 1} of {len(N_range)}")
         n_in, n_tot, t_exec, _ = nn.run()
-        N_dispersion.append(n_tot)
-        result_dispersion.append(n_in)
-        t_exec_dispersion.append(t_exec)
+        if nn.rank == 0:
+            N_dispersion.append(n_tot)
+            result_dispersion.append(n_in)
+            t_exec_dispersion.append(t_exec)
 
     if nn.rank == 0:
         if not os.path.exists("./StarShapes/Results"):
