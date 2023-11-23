@@ -70,7 +70,7 @@ if False:
     exit()
 else:
     # Load data
-    with np.load("./GammaBirth/Results/XR_scaling.npz") as data:
+    with np.load("./GammaBirth/Results/XR_scaling_reduced_size.npz") as data:
         mesh = data["mesh"]
         N_dispersion = data["N_dispersion"]
         t_exec_dispersion = data["t_exec_dispersion"]
@@ -93,7 +93,7 @@ fig, ax = plt.subplots(1, 2, figsize=(10, 5))
 X_range = np.linspace(0, 1, 50)
 R_range = np.linspace(0, 1, 50)
 
-likelihood = counter_state_dispersion / N_dispersion
+likelihood = np.average(counter_state_dispersion, axis=2) / np.average(N_dispersion, axis=2)
 
 cm_0 = pl.scientific.sequential.Tokyo_20.mpl_colormap
 norm = mpl.colors.Normalize(vmin=likelihood.min(), vmax=likelihood.max())
@@ -114,6 +114,8 @@ norm = mpl.colors.Normalize(vmin=t_exec_dispersion.min(), vmax=t_exec_dispersion
 sm = plt.cm.ScalarMappable(cmap=cm_1, norm=norm)
 cbar = fig.colorbar(sm, ax=ax[1])
 cbar.set_label("Execution time [s]")
+
+t_exec_dispersion = np.average(t_exec_dispersion, axis=2)
 
 ax[1].imshow(t_exec_dispersion, extent=[X_range[0], X_range[-1], R_range[0], R_range[-1]],
              aspect="auto", origin="lower", cmap=cm_1, norm=norm)
