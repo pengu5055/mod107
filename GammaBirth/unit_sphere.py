@@ -6,7 +6,7 @@ escape the sphere?
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-# import palettable as pl
+import palettable as pl
 import cmasher as cmr
 from necromancer import NumberNecromancer
 import os
@@ -33,7 +33,7 @@ def condition(pairs, R=R, X=X):
     return np.array(results)
 
 # Iterate over X values AND R values
-if True:
+if False:
     X_range = np.linspace(0, 1, 50)
     R_range = np.linspace(0, 1, 50)
     mesh = []
@@ -76,6 +76,8 @@ else:
         t_exec_dispersion = data["t_exec_dispersion"]
         counter_state_dispersion = data["counter_state_dispersion"]
 
+print(counter_state_dispersion.shape)
+
 # Plot
 plt.rcParams["font.family"] = "IBM Plex Serif"
 plt.rcParams["font.size"] = 10
@@ -88,9 +90,37 @@ cm = pl.colorbrewer.sequential.PuRd_7.mpl_colormap
 colors = cmr.take_cmap_colors(cm, 7, cmap_range=(0.15, 0.85), return_fmt="hex")
 
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+X_range = np.linspace(0, 1, 50)
+R_range = np.linspace(0, 1, 50)
+
+likelihood = counter_state_dispersion / N_dispersion
 
 cm_0 = pl.scientific.sequential.Tokyo_20.mpl_colormap
+norm = mpl.colors.Normalize(vmin=likelihood.min(), vmax=likelihood.max())
+sm = plt.cm.ScalarMappable(cmap=cm_0, norm=norm)
+cbar = fig.colorbar(sm, ax=ax[0])
+cbar.set_label("Likelihood of escape")
 
-ax[0].imshow(counter_state_dispersion, origin="lower")
+ax[0].imshow(likelihood, extent=[X_range[0], X_range[-1], R_range[0], R_range[-1]],
+             aspect="auto", origin="lower", cmap=cm_0, norm=norm)
 
+ax[0].set_xlabel("Average free path length in units of radius")
+ax[0].set_ylabel("Radius of sphere")
+ax[0].set_title("Likelihood of escaping sphere")
+
+# Also show the execution time
+cm_1 = pl.scientific.sequential.Acton_20.mpl_colormap
+norm = mpl.colors.Normalize(vmin=t_exec_dispersion.min(), vmax=t_exec_dispersion.max())
+sm = plt.cm.ScalarMappable(cmap=cm_1, norm=norm)
+cbar = fig.colorbar(sm, ax=ax[1])
+cbar.set_label("Execution time [s]")
+
+ax[1].imshow(t_exec_dispersion, extent=[X_range[0], X_range[-1], R_range[0], R_range[-1]],
+             aspect="auto", origin="lower", cmap=cm_1, norm=norm)
+ax[1].set_xlabel("Average free path length in units of radius")
+ax[1].set_ylabel("Radius of sphere")
+ax[1].set_title("Distribution of execution time @ 1e6 samples")
+
+plt.tight_layout()
+plt.savefig("./GammaBirth/Images/XR_scaling.png", dpi=700)
 plt.show()
