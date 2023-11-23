@@ -33,7 +33,7 @@ def condition(pairs, D=D, L=L):
 
 # Iterate over D values
 if True:
-    D_range = np.linspace(0.01, 10, 100)
+    D_range = np.linspace(0.01, 10, 152)
     N_dispersion = []
     t_exec_dispersion = []
     counter_state_dispersion = []
@@ -66,6 +66,6 @@ else:
 # Plot
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
 
-ax[1].imshow(n_in, origin="lower")
+
 
 plt.show()
