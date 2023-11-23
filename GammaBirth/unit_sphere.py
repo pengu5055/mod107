@@ -33,9 +33,9 @@ def condition(pairs, R=R, X=X):
     return np.array(results)
 
 # Iterate over X values AND R values
-if False:
-    X_range = np.linspace(0, 1, 100)
-    R_range = np.linspace(0, 1, 100)
+if True:
+    X_range = np.linspace(0, 1, 50)
+    R_range = np.linspace(0, 1, 50)
     mesh = []
     N_dispersion = []  
     t_exec_dispersion = []
@@ -64,7 +64,7 @@ if False:
     
     if not os.path.exists("./GammaBirth/Results"):
         os.mkdir("./GammaBirth/Results")
-    np.savez("./GammaBirth/Results/XR_scaling.npz", mesh=mesh, N_dispersion=N_dispersion, 
+    np.savez("./GammaBirth/Results/XR_scaling_reduced_size.npz", mesh=mesh, N_dispersion=N_dispersion, 
             t_exec_dispersion=t_exec_dispersion, counter_state_dispersion=counter_state_dispersion)
     nn.burry()
     exit()
