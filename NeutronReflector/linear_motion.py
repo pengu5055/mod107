@@ -5,7 +5,7 @@ allowed.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import palettable as pl
+# import palettable as pl
 import cmasher as cmr
 from necromancer import NumberNecromancer
 import os
