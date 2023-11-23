@@ -77,7 +77,19 @@ else:
         counter_state_dispersion = data["counter_state_dispersion"]
 
 # Plot
+plt.rcParams["font.family"] = "IBM Plex Serif"
+plt.rcParams["font.size"] = 10
+plt.rcParams["axes.labelsize"] = 12
+plt.rcParams["axes.labelweight"] = "medium"
+plt.rcParams["axes.titlesize"] = 16
+plt.rcParams["axes.titleweight"] = "medium"
+
+cm = pl.colorbrewer.sequential.PuRd_7.mpl_colormap
+colors = cmr.take_cmap_colors(cm, 7, cmap_range=(0.15, 0.85), return_fmt="hex")
+
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+
+cm_0 = pl.scientific.sequential.Tokyo_20.mpl_colormap
 
 ax[0].imshow(counter_state_dispersion, origin="lower")
 
