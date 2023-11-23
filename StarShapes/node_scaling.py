@@ -3,6 +3,7 @@ Check how well the necromancer scales with the number of nodes and
 if there are any artifacts in the results.
 """
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import palettable as pl
@@ -32,11 +33,13 @@ if True:
     exit()
 else:
     # Load data
-    with np.load("./StarShapes/Results/node_scaling.npz") as data:
-        node_range = data["node_range"]
-        N_dispersion = data["N_dispersion"]
-        t_exec_dispersion = data["t_exec_dispersion"]
-        result_dispersion = data["result_dispersion"]
+    data = pd.read_table("./StarShapes/Results/dump.txt", skiprows=1,
+                         names=["n_in", "n_tot", "t_exec"], delimiter="\t")
+    
+    print(data)
+
+    quit()
+
 # Plot
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
 t_exec_disp = []
