@@ -24,27 +24,43 @@
         \vspace*{3cm}
         
         \Huge
-        \textbf{ENTER TITLE}
+        \textbf{Naključna števila in integracije z metodo Monte Carlo}
         
         \vspace{0.5cm}
         \large
-        1. naloga pri Opazovalni Astrofiziki
+        7. naloga pri Modelski Analizi 1
 
         \vspace{4.5cm}
         
-        \textbf{Avtor:} Marko Urbanč (28191096)\ \\
-        \textbf{Predavatelj:} prof. dr. Janez Kos\ \\
+        \textbf{Avtor:} Marko Urbanč (28232019)\ \\
+        \textbf{Predavatelj:} prof. dr. Simon Širca\ \\
+        \textbf{Asistent:} doc. dr. Miha Mihovilovič\ \\
         
-        \vspace{2.8cm}
+        \vspace{1.8cm}
         
         \large
-        28.2.2022
+        23.11.2023
     \end{center}
 \end{titlepage}
 \tableofcontents
 \newpage
 \section{Uvod}
-\cite{rappaport_2006}
+Danes bojo pomembna naključna števila, saj bomo z metodo Monte Carlo računali integrale. 
+Dobro je, da se zavedamo dejstva, da naključna števila, ki nam jih da recimo \texttt{np.random}
+niso dejansko naključna, ampak so generirana po nekem algoritmu, ki je determinističen. Težko (beri: nemogoče) je
+računalniku dati natančna navodila o tem kako naj nekaj nenatančno oz. poljubno naredi. Zato se poslužujemo
+nekaterih algoritmov, ki nam pomagajo pri generiranju naključnih števil. V tem primeru bomo uporabili
+\texttt{numpy.random.uniform}, ki nam vrne naključno število iz enakomerne porazdelitve na intervalu $[0,1)$.
+To my surprise je, da \texttt{numpy} uporablja Mersenne Twister algoritem. In hindsight bi lahko vzel tudi kakšen 
+preprostejši algoritem, ki bi bil hitrejši, čeprav \texttt{numpy} uporablja nekaj trikov, da je hitrejši.
+
+Pri Monte Carlo integraciji naključno izbiramo točke v prostoru, kjer imamo neko omejeno območje, ki ga integriramo.
+Recimo, da je to območje $[a,b] \times [c,d]$, kjer smo od tega še nekaj odrezali, da dobimo trikotnik v profilu. V takem primeru 
+bi izbirali naključne točke $(x,y)$, kjer je $x \in [a,b]$ in $y \in [c,d]$ in vsakič, ko izberemo točko, preverimo, če je
+znotraj območja, ki ga integriramo (v temu preprostemu primeru, ko nekaj odrežemo, preverimo ali je točka znotraj trikotne prizme).
+
+
+
 \section{Naloga}
 
 \section{Opis reševanja}
