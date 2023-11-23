@@ -58,7 +58,7 @@ def iso_condition(pairs):
                 pos = newpos
 
     return np.array(results)
-if True:
+if False:
     nn = NumberNecromancer(condition, num_samples=1e6, num_dimensions=1, domain=[0, 1])
     n_in, n_tot, t_exec, _ = nn.run()
     lattice = nn.results_tot
@@ -88,4 +88,66 @@ if True:
 
 else:
     # Load data
-    pass
+    with np.load("./NeutronReflector/Results/linear_scattering.npz") as data:
+        n_in = data["n_in"]
+        n_tot = data["n_tot"]
+        t_exec = data["t_exec"]
+        lattice = data["lattice"]
+        print(lattice.shape)
+
+    with np.load("./NeutronReflector/Results/iso_scattering.npz") as data:
+        n_in_iso = data["n_in"]
+        n_tot_iso = data["n_tot"]
+        t_exec_iso = data["t_exec"]
+        lattice_iso = data["lattice"]
+        print(lattice_iso.shape)
+    
+# Plot
+plt.rcParams["font.family"] = "IBM Plex Serif"
+plt.rcParams["font.size"] = 10
+plt.rcParams["axes.labelsize"] = 12
+plt.rcParams["axes.labelweight"] = "medium"
+plt.rcParams["axes.titlesize"] = 16
+plt.rcParams["axes.titleweight"] = "medium"
+
+cm = pl.colorbrewer.sequential.PuRd_7.mpl_colormap
+colors = cmr.take_cmap_colors(cm, 7, cmap_range=(0.2, 0.8), return_fmt="hex")
+
+fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+
+# Flatten the lattice
+# Truncate the lattice because it is too large (plotting takes too long)
+lattice = np.concatenate(lattice)[::100]
+T = np.where(lattice > 0, lattice, np.nan)
+# Remove the negative values
+T = T[~np.isnan(T)]
+print(T.shape)
+
+
+lattice_iso = np.concatenate(lattice_iso)[::100]
+T_iso = np.where(lattice_iso >= 0, lattice_iso, np.nan)
+# Remove the negative values
+T_iso = T_iso[~np.isnan(T_iso)]
+print(T_iso.shape)
+
+ax[0].hist(T, bins=10, density=True, color=colors[6], edgecolor=colors[1], zorder=3)
+
+ax[0].set_facecolor("#ebf9fc")
+ax[0].grid(color="#737373", alpha=0.1, zorder=-1)
+ax[0].set_xlabel("Number of Scattering Events")
+ax[0].set_ylabel("Density")
+ax[0].set_yscale("log")
+ax[0].set_title("Linear Motion")
+
+ax[1].hist(T_iso, bins=10, density=True, color=colors[6], edgecolor=colors[1], zorder=3)
+
+ax[1].set_facecolor("#ebf9fc")
+ax[1].grid(color="#737373", alpha=0.1, zorder=-1)
+ax[1].set_xlabel("Number of Scattering Events")
+ax[1].set_ylabel("Density")
+ax[1].set_yscale("log")
+ax[1].set_title("Isotropic Motion")
+
+plt.tight_layout()
+plt.savefig("./NeutronReflector/Images/scattering.png", dpi=700)
+plt.show()
