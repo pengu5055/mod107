@@ -14,7 +14,8 @@ class NumberNecromancer:
                  condition_function: Callable,
                  num_samples: int,
                  num_dimensions: int,
-                 domain: Tuple[float, float] = (0, 1),        
+                 domain: Tuple[float, float] = (0, 1),
+                 quiet_slaves: bool = False        
                  ) -> None:
         """
         The base class for the parallel Monte Carlo integrator.
@@ -29,6 +30,8 @@ class NumberNecromancer:
             The number of dimensions to sample.
         domain : Tuple[float, float], optional
             The domain to sample over, by default (0, 1).
+        quiet_slaves : bool, optional
+            Whether to print information from the slaves, by default False.
         """
         # Initialize MPI
         self.comm = MPI.COMM_WORLD
@@ -47,7 +50,10 @@ class NumberNecromancer:
         # Initialize container for samples
         self.samples = None
 
-        print(f"Rank {self.rank} of {self.size} risen from the dead on {socket.gethostname()}")
+        self.quiet_slaves = quiet_slaves
+
+        if not self.quiet_slaves:
+            print(f"Rank {self.rank} of {self.size} risen from the dead on {socket.gethostname()}")
     
     def _generate_samples(self) -> np.ndarray:
         """
@@ -116,7 +122,8 @@ class NumberNecromancer:
         """
         Burry the dead.
         """
-        print(f"Rank {self.rank} of {self.size} burried on {socket.gethostname()}")
+        if not self.quiet_slaves:
+            print(f"Rank {self.rank} of {self.size} burried on {socket.gethostname()}")
 
         # Close the client
         MPI.Finalize()
