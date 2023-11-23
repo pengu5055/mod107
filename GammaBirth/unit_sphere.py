@@ -51,6 +51,46 @@ if True:
     np.savez("./GammaBirth/Results/X_scaling.npz", X_range=X_range, N_dispersion=N_dispersion, 
             t_exec_dispersion=t_exec_dispersion, counter_state_dispersion=counter_state_dispersion)
     nn.burry()
+else:
+    pass
+
+def condition2(pairs, R=R):
+    results = []
+    for pair in pairs:
+        theta_pre, r_pre = pair
+        theta = np.arccos(2 * theta_pre - 1)
+        r = r_pre**(1/3)
+        free_path = np.random.exponential(scale=R * X)
+        dist = - r * np.cos(theta) + np.sqrt(1 - (r/R)**2*(1-np.cos(theta)**2))
+        if free_path > dist:  
+            results.append(True)
+        else:
+            results.append(False)
+
+    return np.array(results)
+
+if True:
+    R_range = np.linspace(0, 1, 100)
+    N_dispersion = []
+    t_exec_dispersion = []
+    counter_state_dispersion = []
+    for i, R in enumerate(R_range):
+        cond = lambda x: condition2(x, R=R)
+        nn = NumberNecromancer(cond, num_samples=1e7, num_dimensions=2, domain=[0, 1], quiet_slaves=True)
+        if nn.rank == 0:
+            print(f"Running {i + 1} of {len(R_range)}")
+        n_in, n_tot, t_exec, res = nn.run()
+        if nn.rank == 0:
+            N_dispersion.append(n_tot)
+            counter_state_dispersion.append(n_in)
+            t_exec_dispersion.append(t_exec)
+    
+    if not os.path.exists("./GammaBirth/Results"):
+        os.mkdir("./GammaBirth/Results")
+
+    np.savez("./GammaBirth/Results/R_scaling.npz", R_range=R_range, N_dispersion=N_dispersion,
+            t_exec_dispersion=t_exec_dispersion, counter_state_dispersion=counter_state_dispersion)
+    nn.burry()
     exit()
 else:
     pass
