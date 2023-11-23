@@ -13,6 +13,7 @@ import os
 # Consts
 D = 1
 L = D/2
+N = 1e6
 
 def condition(pairs, D=D, L=L):
     results = []
@@ -38,28 +39,29 @@ if True:
     counter_state_dispersion = []
     for i, D in enumerate(D_range):
         cond = lambda x: condition(x, D=D)
-        nn = NumberNecromancer(cond, num_samples=1e7, num_dimensions=2, domain=[0, 1], quiet_slaves=True)
+        nn = NumberNecromancer(cond, num_samples=N, num_dimensions=2, domain=[0, 1], quiet_slaves=True)
         if nn.rank == 0:
             print(f"Running {i + 1} of {len(D_range)}")
         n_in, n_tot, t_exec, res = nn.run()
-        if nn.rank == 0:
-            N_dispersion.append(n_tot)
-            counter_state_dispersion.append(n_in)
-            t_exec_dispersion.append(t_exec)
+        N_dispersion.append(n_tot)
+        counter_state_dispersion.append(n_in)
+        t_exec_dispersion.append(t_exec)
+
     if nn.rank == 0:
         if not os.path.exists("./NeutronReflector/Results"):
             os.mkdir("./NeutronReflector/Results")
     
-        np.savez("./NeutronReflector/Results/D_scale_isotropic.npz", n_in=n_in, n_tot=n_tot, t_exec=t_exec)
+        np.savez("./NeutronReflector/Results/D_scale_isotropic.npz", N_dispersion=N_dispersion,
+                    counter_state_dispersion=counter_state_dispersion, t_exec_dispersion=t_exec_dispersion)
     
     nn.burry()
     exit()
 else:
     # Load data
     with np.load("./NeutronReflector/Results/D_scale_isotropic.npz") as data:
-        n_in = data["n_in"]
-        n_tot = data["n_tot"]
-        t_exec = data["t_exec"]
+        N_dispersion = data["N_dispersion"]
+        t_exec_dispersion = data["t_exec_dispersion"]
+        counter_state_dispersion = data["counter_state_dispersion"]
     
 # Plot
 fig, ax = plt.subplots(1, 2, figsize=(10, 5))
