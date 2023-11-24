@@ -5,7 +5,7 @@ of the neutron allowed.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-# import palettable as pl
+import palettable as pl
 import cmasher as cmr
 from necromancer import NumberNecromancer
 import os
@@ -34,7 +34,7 @@ def condition(pairs, D=D, L=L):
 
 
 # Iterate over D values
-if True:
+if False:
     D_range = np.linspace(0.01, 10, 152)
     N_dispersion = []
     t_exec_dispersion = []
@@ -60,7 +60,7 @@ if True:
     exit()
 else:
     # Load data
-    with np.load("./NeutronReflector/Results/D_scale_isotropic.npz") as data:
+    with np.load("./NeutronReflector/Results/D_scale_isotropic_recalc.npz") as data:
         N_dispersion = data["N_dispersion"]
         t_exec_dispersion = data["t_exec_dispersion"]
         counter_state_dispersion = data["counter_state_dispersion"]

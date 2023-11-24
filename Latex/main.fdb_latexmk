@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1700787969 "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" "main.pdf" "main" 1700787987 0
+["pdflatex"] 1700788659 "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" "main.pdf" "main" 1700788677 0
   "../GammaBirth/Images/XR_scaling.png" 1700742228 506691 85fa1beb99b382a40eb0867a8ccf244f ""
-  "../NeutronReflector/Images/isotropic_motion.png" 1700740818 491776 1a1e4f31c1e6c4b6d96113600afc6f50 ""
+  "../NeutronReflector/Images/isotropic_motion.png" 1700788658 497586 b650d379c6f364447b5cf523bfabec2c ""
   "../NeutronReflector/Images/linear_motion.png" 1700786711 1435308 88b2b5e39ab9f1d2c7c97368fd560329 ""
   "../NeutronReflector/Images/scattering.png" 1700779830 277533 e5016f5bc60dd4054cb1423645ae2775 ""
   "../StarShapes/Images/angular_const.png" 1700697507 1374544 972d70b83d7f2199363b3bdd7db14e96 ""
@@ -12,7 +12,7 @@
   "../StarShapes/Images/mass_const_heatmaps.png" 1700697285 463054 8ab3f04c68dbc56a6a9481ac3408db9a ""
   "../StarShapes/Images/mass_radial.png" 1700693662 822838 c67694649fa3ac94ab845aecb8d31c7a ""
   "../StarShapes/Images/mass_radial_heatmaps.png" 1700693659 480083 dca27503dae6c4eeeefe5b97242d08c6 ""
-  "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" 1700787964 20852 40cde609aeb2f665f60160c597967936 ""
+  "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" 1700788672 20852 40cde609aeb2f665f60160c597967936 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -105,10 +105,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1697067503 4603192 0eff5d941e341e7e38e369b967619829 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1700589378 7863018 31bbc24d0d8bf18208bc619c0d21fc9b ""
   "logo.png" 1697060406 8303 7b15c7eec596b95d22d9e8d01528be9a ""
-  "main.aux" 1700787987 6222 19a82b39e7e240918c97a956c71d8204 "pdflatex"
-  "main.out" 1700787987 1903 f590a614a8ce732e5e26b1908e4105fb "pdflatex"
-  "main.tex" 1700787964 20852 40cde609aeb2f665f60160c597967936 ""
-  "main.toc" 1700787987 1133 7f4266d95e4c144793fcc99f92b84e30 "pdflatex"
+  "main.aux" 1700788677 6222 19a82b39e7e240918c97a956c71d8204 "pdflatex"
+  "main.out" 1700788677 1903 f590a614a8ce732e5e26b1908e4105fb "pdflatex"
+  "main.tex" 1700788672 20852 40cde609aeb2f665f60160c597967936 ""
+  "main.toc" 1700788677 1133 7f4266d95e4c144793fcc99f92b84e30 "pdflatex"
   (generated)
   "main.aux"
   "main.log"
