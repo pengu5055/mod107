@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 01:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 02:06
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -388,7 +388,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package translations Info: no dictionary file `translations-basic-dictionary-slovenian.trsl' found. on input line 21.
-<logo.png, id=65, 220.67175pt x 141.22992pt>
+<logo.png, id=61, 220.67175pt x 141.22992pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 24.
@@ -445,7 +445,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 160--161
  []
 
 [4]
-<../StarShapes/Images/mass_const.png, id=123, 722.7pt x 361.35pt>
+<../StarShapes/Images/mass_const.png, id=118, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/mass_const.png Graphic file (type png)
 <use ../StarShapes/Images/mass_const.png>
 Package pdftex.def Info: ../StarShapes/Images/mass_const.png  used on input line 172.
@@ -460,13 +460,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--194
 
  []
 
-<../StarShapes/Images/mass_const_heatmaps.png, id=125, 722.7pt x 361.35pt>
+<../StarShapes/Images/mass_const_heatmaps.png, id=120, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/mass_const_heatmaps.png Graphic file (type png)
 <use ../StarShapes/Images/mass_const_heatmaps.png>
 Package pdftex.def Info: ../StarShapes/Images/mass_const_heatmaps.png  used on input line 197.
 (pdftex.def)             Requested size: 345.0pt x 172.49767pt.
 [5 <../StarShapes/Images/mass_const.png>]
-<../StarShapes/Images/mass_radial.png, id=134, 722.7pt x 361.35pt>
+<../StarShapes/Images/mass_radial.png, id=129, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/mass_radial.png Graphic file (type png)
 <use ../StarShapes/Images/mass_radial.png>
 Package pdftex.def Info: ../StarShapes/Images/mass_radial.png  used on input line 211.
@@ -477,12 +477,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 216--225
  []
 
 [6 <../StarShapes/Images/mass_const_heatmaps.png> <../StarShapes/Images/mass_radial.png>]
-<../StarShapes/Images/mass_radial_heatmaps.png, id=145, 722.7pt x 361.35pt>
+<../StarShapes/Images/mass_radial_heatmaps.png, id=140, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/mass_radial_heatmaps.png Graphic file (type png)
 <use ../StarShapes/Images/mass_radial_heatmaps.png>
 Package pdftex.def Info: ../StarShapes/Images/mass_radial_heatmaps.png  used on input line 228.
 (pdftex.def)             Requested size: 345.0pt x 172.49767pt.
-<../StarShapes/Images/angular_const.png, id=147, 722.7pt x 361.35pt>
+<../StarShapes/Images/angular_const.png, id=142, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/angular_const.png Graphic file (type png)
 <use ../StarShapes/Images/angular_const.png>
 Package pdftex.def Info: ../StarShapes/Images/angular_const.png  used on input line 239.
@@ -493,17 +493,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--250
  []
 
 [7 <../StarShapes/Images/mass_radial_heatmaps.png> <../StarShapes/Images/angular_const.png>]
-<../StarShapes/Images/angular_const_heatmaps.png, id=156, 722.7pt x 361.35pt>
+<../StarShapes/Images/angular_const_heatmaps.png, id=151, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/angular_const_heatmaps.png Graphic file (type png)
 <use ../StarShapes/Images/angular_const_heatmaps.png>
 Package pdftex.def Info: ../StarShapes/Images/angular_const_heatmaps.png  used on input line 253.
 (pdftex.def)             Requested size: 345.0pt x 172.49767pt.
-<../StarShapes/Images/angular_radial.png, id=158, 722.7pt x 361.35pt>
+<../StarShapes/Images/angular_radial.png, id=153, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/angular_radial.png Graphic file (type png)
 <use ../StarShapes/Images/angular_radial.png>
 Package pdftex.def Info: ../StarShapes/Images/angular_radial.png  used on input line 262.
 (pdftex.def)             Requested size: 345.0pt x 172.49767pt.
-<../StarShapes/Images/angular_radial_heatmaps.png, id=160, 722.7pt x 361.35pt>
+<../StarShapes/Images/angular_radial_heatmaps.png, id=155, 722.7pt x 361.35pt>
 File: ../StarShapes/Images/angular_radial_heatmaps.png Graphic file (type png)
 <use ../StarShapes/Images/angular_radial_heatmaps.png>
 Package pdftex.def Info: ../StarShapes/Images/angular_radial_heatmaps.png  used on input line 271.
@@ -513,44 +513,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 277--285
 
  []
 
-<../GammaBirth/Images/XR_scaling.png, id=171, 722.7pt x 361.35pt>
+<../GammaBirth/Images/XR_scaling.png, id=166, 722.7pt x 361.35pt>
 File: ../GammaBirth/Images/XR_scaling.png Graphic file (type png)
 <use ../GammaBirth/Images/XR_scaling.png>
 Package pdftex.def Info: ../GammaBirth/Images/XR_scaling.png  used on input line 288.
 (pdftex.def)             Requested size: 345.0pt x 172.49767pt.
 [9 <../StarShapes/Images/angular_radial_heatmaps.png>]
-
-LaTeX Warning: Reference `fig:linear_motion' on page 10 undefined on input line 296.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 294--300
 
  []
 
-[10 <../GammaBirth/Images/XR_scaling.png>] (./main.bbl
+<../NeutronReflector/Images/linear_motion.png, id=175, 722.7pt x 361.35pt>
+File: ../NeutronReflector/Images/linear_motion.png Graphic file (type png)
+<use ../NeutronReflector/Images/linear_motion.png>
+Package pdftex.def Info: ../NeutronReflector/Images/linear_motion.png  used on input line 303.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+[10 <../GammaBirth/Images/XR_scaling.png> <../NeutronReflector/Images/linear_motion.png>]
+<../NeutronReflector/Images/isotropic_motion.png, id=185, 722.7pt x 361.35pt>
+File: ../NeutronReflector/Images/isotropic_motion.png Graphic file (type png)
+<use ../NeutronReflector/Images/isotropic_motion.png>
+Package pdftex.def Info: ../NeutronReflector/Images/isotropic_motion.png  used on input line 315.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+Underfull \hbox (badness 10000) in paragraph at lines 320--325
 
-) [11] (./main.aux)
+ []
 
-LaTeX Warning: There were undefined references.
+<../NeutronReflector/Images/scattering.png, id=186, 722.7pt x 361.35pt>
+File: ../NeutronReflector/Images/scattering.png Graphic file (type png)
+<use ../NeutronReflector/Images/scattering.png>
+Package pdftex.def Info: ../NeutronReflector/Images/scattering.png  used on input line 328.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 334--342
+
+ []
+
+[11 <../NeutronReflector/Images/isotropic_motion.png> <../NeutronReflector/Images/scattering.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 344--348
+
+ []
+
+[12] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1125FF23727901E242FE9FEA09A03AFD;1999.
+(rerunfilecheck)             Checksum: F590A614A8CE732E5E26B1908E4105FB;1903.
  ) 
 Here is how much of TeX's memory you used:
- 15894 strings out of 476182
- 303745 string characters out of 5796580
+ 15915 strings out of 476182
+ 304727 string characters out of 5796580
  1859793 words of memory out of 6000000
- 35980 multiletter control sequences out of 15000+600000
+ 35997 multiletter control sequences out of 15000+600000
  515379 words of font info for 43 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  72i,8n,77p,313b,912s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (12 pages, 7243771 bytes).
+Output written on main.pdf (13 pages, 9746676 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
- 44 named destinations out of 1000 (max. 500000)
- 175 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 259 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

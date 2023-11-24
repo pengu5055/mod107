@@ -12,5 +12,4 @@
 \contentsline {subsection}{\numberline {4.1}Zvezdasti lik}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Rojevanje žarkov gamma}{9}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Nevtronski reflektor}{10}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Komentarji in izboljšave}{10}{section.5}%
-\contentsline {section}{Literatura}{11}{section*.11}%
+\contentsline {section}{\numberline {5}Komentarji in izboljšave}{12}{section.5}%
