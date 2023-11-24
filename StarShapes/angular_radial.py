@@ -6,7 +6,7 @@ import numpy as np
 from necromancer import NumberNecromancer
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import palettable as pl
+# import palettable as pl
 import cmasher as cmr
 import os
 
@@ -37,7 +37,7 @@ def condition(pairs, P=P_DEF):
     return np.array(results)
 
 # --- Plot 1: Scaling with P ---
-if False:
+if True:
     P_range = np.linspace(0, 5, 100)
     # Result dispersion across nodes
     N_dispersion = []  # Slightly deviates due to floor division when chunking
