@@ -5,7 +5,7 @@ of the neutron allowed.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import palettable as pl
+# import palettable as pl
 import cmasher as cmr
 from necromancer import NumberNecromancer
 import os
@@ -21,18 +21,20 @@ def condition(pairs, D=D, L=L):
         exp_pre, theta_pre = pair
         theta = np.arccos(2 * theta_pre - 1)
         exp = -1/L * np.log(1 - exp_pre)
-        pos = 0.5 + exp * np.cos(theta)
+        pos = D/2 + exp * np.cos(theta)
 
-        if pos < D:
-            results.append(True)
+        if pos > D:
+            results.append(1)
+        elif pos < 0:
+            results.append(-1)
         else:
-            results.append(False)
+            results.append(0)
 
     return np.array(results)
 
 
 # Iterate over D values
-if False:
+if True:
     D_range = np.linspace(0.01, 10, 152)
     N_dispersion = []
     t_exec_dispersion = []
@@ -51,7 +53,7 @@ if False:
         if not os.path.exists("./NeutronReflector/Results"):
             os.mkdir("./NeutronReflector/Results")
     
-        np.savez("./NeutronReflector/Results/D_scale_isotropic.npz", N_dispersion=N_dispersion,
+        np.savez("./NeutronReflector/Results/D_scale_isotropic_recalc.npz", N_dispersion=N_dispersion,
                     counter_state_dispersion=counter_state_dispersion, t_exec_dispersion=t_exec_dispersion)
     
     nn.burry()
