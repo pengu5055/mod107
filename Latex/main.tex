@@ -305,9 +305,45 @@ res očiten padec v času izvajanja na jedrih, ki so boljša. \\
     \label{fig:linear_motion}
 \end{figure}
 
-\section{Komentarji in izboljšave}
+Podoben graf lahko narišemo tudi za izotropno (v planarnem) gibanje, kar je prikazano na sliki (\ref{fig:isotropic_motion}).
+Tu je razlika, da sem računal za različne debeline reflektorja. Na levi je prikazana prepustnost, na desni pa čas izvajanja.
+Kar me najbolj bega je, zakaj za boga dobim za debelejše reflektorje večjo prepustnost. Zdaj ob pisanju tega reporta mi je
+padlo na pamet, da mogoče nisem upošteval, da se $d_0$ spreminja z debelino reflektorja. To bi pomenilo, da se pri večjih debelinah
 
-\newpage
-\bibliographystyle{unsrt}
-\bibliography{sources}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../NeutronReflector/Images/isotropic_motion.png}
+    \caption{Prepustnost nevtronov skozi reflektor in čas izvajanja.}
+    \label{fig:isotropic_motion}
+\end{figure}
+
+In na zadnje porazdelitev po številu sipanj. V prejšnjih primerih sem vedno gledal samo za eno sipanje, kar se po moji
+porazdelitvi tako ali tako izkaže za najbolj verjetno. Desen plot bi lahko verjetno bil mnogo boljši še bi outlier pri 
+$N = 700000$ odstranil, ampak se mi je zdelo tako imenitno, da se mi je nekako posrečilo ujeti nesrečni nevtron, ki se 
+je sipal skoraj milijon krat. Sicer pa ja, ko dopuščam polno planarno gibanje število sipanj očitno zelo naraste, kar mi 
+je zanimivo, ali pa samo tako zgleda zaradi nekaj outlier-jev. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../NeutronReflector/Images/scattering.png}
+    \caption{Porazdelitev po številu sipanj.}
+    \label{fig:scatter}
+\end{figure}
+
+\section{Komentarji in izboljšave}
+Se mi zdi, da se opazi razlika med prvo nalogo in potem drugo in tretjo. Ugotovil sem, da mi je vedno manj všeč, 
+kako je zastavljen predmet, ker se mi zdi, da je preveč fokusa na sheer volume of work, ne pa na to, da bi lahko nek 
+problem res globinsko raziskal. Veliko bolj bi preferiral strožje ocenjevanje in samo prvo nalogo, kjer bi si lahko potem
+res pogledal še detaile in se iz tega naučil nekaj novega, namesto da rešujem isti problem na surface level-u. in 
+na koncu se naučim bolj nič in so slike half-assed. To bi mi tudi omogočilo da se \textbf{končno} spustim globlje v 
+fiziko samega problema. Drugače imam preferenco nad drugimi stvarmi in potem raje delam tisto, kar mi je zanimivo. Pravzaprav
+sem razmišljal kaj je boljše, delati nalogo tako kot jaz mislim, da bom maksimiziral novo znanje in zadovoljstvo, ali tako,
+da dobim čim boljšo oceno. Trenutno, priznam, jih delam bolj v slogu prve možnosti. \\
+
+
+Nevem če je to sprememba, ki bi se reasonably kadarkoli uvedla v predmet, ampak one can dream. No ja, jaz bi si že 
+tako na sploh želel, da bi bilo več fokusa tudi na kvaliteto numerike, ne samo na to, kdo naredi najbolj pisane plote.
+Še sploh ko med fiziki menda pogosto, da je koda popolnoma neberljiv obup. Hell jaz bi dal 20\% ocene za to, da je koda
+v zglednem formatu. Ocena based on kako dolgo rabim, da ugotovim kaj se dogaja etc. \\
+
 \end{document}
