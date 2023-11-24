@@ -6,7 +6,7 @@ import numpy as np
 from necromancer import NumberNecromancer
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-# import palettable as pl
+import palettable as pl
 import cmasher as cmr
 import os
 
@@ -37,7 +37,7 @@ def condition(pairs, P=P_DEF):
     return np.array(results)
 
 # --- Plot 1: Scaling with P ---
-if True:
+if False:
     P_range = np.linspace(0, 5, 100)
     # Result dispersion across nodes
     N_dispersion = []  # Slightly deviates due to floor division when chunking
@@ -135,7 +135,7 @@ ax[0].set_xlabel("Value of $P$")
 ax_add.set_ylabel("Execution time [s]")
 ax[0].set_ylabel("Angular momentum [arb. units]")
 ax[0].legend(loc="lower left", frameon=False)
-ax_add.legend(loc="upper right", frameon=False, ncols=2, fontsize=9)
+ax_add.legend(loc=(0.3, 0.5), frameon=False, ncols=1, fontsize=10)
 ax[0].set_title("Angular momentum of star shape\n for different values of $P$")
 
 # Plot 2: Success rate per node

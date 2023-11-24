@@ -256,6 +256,9 @@ pri masi, kljub temu, da ne bi smelo biti nobenega vpliva. Not sure. \\
 \end{figure}
 
 Za primer, ko je gostota odvisna od razdalje od izhodišča, pa so rezultati prikazani na sliki (\ref{fig:angular_radial}).
+Vidimo, da se zgodi ista stvar kot pri masi, ko je gostota odvisna od razdalje od izhodišča. Zanimivo je tudi, da se isto 
+pojavi ta drop-off v času računanja pri večjih vrednostih $p$. Not exactly sure kaj bi lahko bil vzrok za to. Spet 
+vidimo, da je success rate res naključen, kar je prikazano na desni strani. \\
 
 \begin{figure}[H]
     \centering
@@ -265,6 +268,8 @@ Za primer, ko je gostota odvisna od razdalje od izhodišča, pa so rezultati pri
 \end{figure}
 
 Tudi tu sem iz radovednosti narisal še raztros po jedrih, kar je prikazano na sliki (\ref{fig:angular_radial_heatmaps}).
+Vidno kar je bilo pričakovano in vidno že prej, a vseeno prijetno dobiti rezultat, ki je v skladu z našimi pričakovanji.
+Na levi je prikazan rezultat za vztrajnostni moment, na desni pa za čas izvajanja. \\
 
 \begin{figure}[H]
     \centering
@@ -307,8 +312,10 @@ res očiten padec v času izvajanja na jedrih, ki so boljša. \\
 
 Podoben graf lahko narišemo tudi za izotropno (v planarnem) gibanje, kar je prikazano na sliki (\ref{fig:isotropic_motion}).
 Tu je razlika, da sem računal za različne debeline reflektorja. Na levi je prikazana prepustnost, na desni pa čas izvajanja.
-Kar me najbolj bega je, zakaj za boga dobim za debelejše reflektorje večjo prepustnost. Zdaj ob pisanju tega reporta mi je
-padlo na pamet, da mogoče nisem upošteval, da se $d_0$ spreminja z debelino reflektorja. To bi pomenilo, da se pri večjih debelinah
+Zdaj ob pisanju tega reporta mi je padlo na pamet, da mogoče nisem upošteval, da se $d_0$ spreminja z debelino reflektorja. 
+Sem prav s tem namenom znova prižgal cluster in pognal izračune za popravljeno kodo in sem dobil bolj smiselne rezultate. Te 
+so te, ki so prikazani na sliki (\ref{fig:isotropic_motion}). Tu je očitno, da je prepustnost večja, če je debelina reflektorja
+manjša. \\
 
 \begin{figure}[H]
     \centering
