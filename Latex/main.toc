@@ -6,8 +6,9 @@
 \contentsline {subsection}{\numberline {2.3}Nevtronski reflektor}{3}{subsection.2.3}%
 \contentsline {section}{\numberline {3}Opis reševanja}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Zvezdasti lik}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Rojevanje žarkov gamma}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2}Rojevanje žarkov gamma}{4}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Nevtronski reflektor}{4}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Rezultati}{4}{section.4}%
-\contentsline {section}{\numberline {5}Komentarji in izboljšave}{4}{section.5}%
-\contentsline {section}{Literatura}{5}{section*.2}%
+\contentsline {subsection}{\numberline {4.1}Zvezdasti lik}{5}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Komentarji in izboljšave}{8}{section.5}%
+\contentsline {section}{Literatura}{9}{section*.8}%

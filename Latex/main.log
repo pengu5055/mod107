@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.11.21)  24 NOV 2023 01:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -307,6 +307,13 @@ Package: multimedia 2012/05/02 ver 0.02
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 )
 \mm@movie=\count300
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count301
+\float@exts=\toks25
+\float@box=\box62
+\@float@everytoks=\toks26
+\@floatcapt=\box63
 ) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -315,9 +322,9 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package xcolor Info: Driver file: pdftex.def on input line 227.
  (/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2022/06/20 v1.0f Color table columns (DPC)
-\everycr=\toks25
+\everycr=\toks27
 \minrowclearance=\skip55
-\rownum=\count301
+\rownum=\count302
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
@@ -330,60 +337,61 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count302
-\l__pdf_internal_box=\box62
+\l__color_backend_stack_int=\count303
+\l__pdf_internal_box=\box64
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count303
+\scratchcounter=\count304
 \scratchdimen=\dimen172
-\scratchbox=\box63
-\nofMPsegments=\count304
-\nofMParguments=\count305
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count306
+\scratchbox=\box65
+\nofMPsegments=\count305
+\nofMParguments=\count306
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count307
 \MPscratchDim=\dimen173
-\MPnumerator=\count307
-\makeMPintoPDFobject=\count308
-\everyMPtoPDFconversion=\toks27
+\MPnumerator=\count308
+\makeMPintoPDFobject=\count309
+\everyMPtoPDFconversion=\toks29
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 21.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package translations Info: no dictionary file `translations-basic-dictionary-slovenian.trsl' found. on input line 20.
-<logo.png, id=53, 220.67175pt x 141.22992pt>
+Package translations Info: no dictionary file `translations-basic-dictionary-slovenian.trsl' found. on input line 21.
+<logo.png, id=57, 220.67175pt x 141.22992pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 23.
+Package pdftex.def Info: logo.png  used on input line 24.
 (pdftex.def)             Requested size: 220.6712pt x 141.22955pt.
  [1
 
@@ -395,58 +403,129 @@ Package pdftex.def Info: logo.png  used on input line 23.
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 \newpage
+l.47 \newpage
               [1]
-Underfull \hbox (badness 10000) in paragraph at lines 48--56
+Underfull \hbox (badness 10000) in paragraph at lines 49--57
 
  []
 
 [2]
-Overfull \hbox (12.76814pt too wide) in paragraph at lines 90--95
+Overfull \hbox (12.76814pt too wide) in paragraph at lines 91--96
 \OT1/cmr/m/n/10 lati na ve^^Tc je-der. To sem na-re-dil tako, da sem si na-pi-sal ra-zred \OT1/cmtt/m/n/10 NumberNecromancer\OT1/cmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--95
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--111
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--116
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--153
+Underfull \hbox (badness 10000) in paragraph at lines 155--158
 
  []
 
-[4] (./main.bbl
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+
+ []
+
+[4]
+<../StarShapes/Images/mass_const.png, id=113, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/mass_const.png Graphic file (type png)
+<use ../StarShapes/Images/mass_const.png>
+Package pdftex.def Info: ../StarShapes/Images/mass_const.png  used on input line 172.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 177--183
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--194
+
+ []
+
+<../StarShapes/Images/mass_const_heatmaps.png, id=115, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/mass_const_heatmaps.png Graphic file (type png)
+<use ../StarShapes/Images/mass_const_heatmaps.png>
+Package pdftex.def Info: ../StarShapes/Images/mass_const_heatmaps.png  used on input line 197.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+[5 <../StarShapes/Images/mass_const.png>]
+<../StarShapes/Images/mass_radial.png, id=124, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/mass_radial.png Graphic file (type png)
+<use ../StarShapes/Images/mass_radial.png>
+Package pdftex.def Info: ../StarShapes/Images/mass_radial.png  used on input line 211.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 216--225
+
+ []
+
+[6 <../StarShapes/Images/mass_const_heatmaps.png> <../StarShapes/Images/mass_radial.png>]
+<../StarShapes/Images/mass_radial_heatmaps.png, id=135, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/mass_radial_heatmaps.png Graphic file (type png)
+<use ../StarShapes/Images/mass_radial_heatmaps.png>
+Package pdftex.def Info: ../StarShapes/Images/mass_radial_heatmaps.png  used on input line 228.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+<../StarShapes/Images/angular_const.png, id=137, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/angular_const.png Graphic file (type png)
+<use ../StarShapes/Images/angular_const.png>
+Package pdftex.def Info: ../StarShapes/Images/angular_const.png  used on input line 239.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--250
+
+ []
+
+[7 <../StarShapes/Images/mass_radial_heatmaps.png> <../StarShapes/Images/angular_const.png>]
+<../StarShapes/Images/angular_const_heatmaps.png, id=146, 722.7pt x 361.35pt>
+File: ../StarShapes/Images/angular_const_heatmaps.png Graphic file (type png)
+<use ../StarShapes/Images/angular_const_heatmaps.png>
+Package pdftex.def Info: ../StarShapes/Images/angular_const_heatmaps.png  used on input line 253.
+(pdftex.def)             Requested size: 345.0pt x 172.49767pt.
+
+
+LaTeX Warning: Reference `fig:angular_radial' on page 8 undefined on input line 258.
+
+[8 <../StarShapes/Images/angular_const_heatmaps.png>] (./main.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [5] (./main.aux)
+) [9] (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E200896533B8E2010BB588E26BFB3C7D;1534.
+(rerunfilecheck)             Checksum: 1D4DD9668DADCAEFD3DC4F7480914FED;1660.
  ) 
 Here is how much of TeX's memory you used:
- 15727 strings out of 476182
- 299345 string characters out of 5796580
+ 15860 strings out of 476182
+ 302651 string characters out of 5796580
  1859793 words of memory out of 6000000
- 35846 multiletter control sequences out of 15000+600000
+ 35957 multiletter control sequences out of 15000+600000
  515379 words of font info for 43 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 72i,8n,77p,313b,899s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,8n,77p,313b,912s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (6 pages, 154318 bytes).
+Output written on main.pdf (10 pages, 5341304 bytes).
 PDF statistics:
- 166 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
- 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 217 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 

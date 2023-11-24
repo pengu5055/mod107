@@ -1,14 +1,20 @@
 # Fdb version 4
-["bibtex main"] 1700782479 "main.aux" "main.bbl" "main" 1700782826 0
+["bibtex main"] 1700785054 "main.aux" "main.bbl" "main" 1700785407 0
   "./sources.bib" 1697060406 585 59db498271dfb5e1811a288748c6fc20 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/unsrt.bst" 1684972800 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1700782826 2080 a4043baba0ad87f4eeaa094adc30bd30 "pdflatex"
+  "main.aux" 1700785407 4166 833f04507abbf60e5a59c523440ff611 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1700782826 "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" "main.pdf" "main" 1700782826 0
-  "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" 1700782826 8313 b8f5427fe10307cfbc194c055c96e419 ""
+["pdflatex"] 1700785397 "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" "main.pdf" "main" 1700785407 0
+  "../StarShapes/Images/angular_const.png" 1700697507 1374544 972d70b83d7f2199363b3bdd7db14e96 ""
+  "../StarShapes/Images/angular_const_heatmaps.png" 1700697512 508733 50c27c08b400f144f7130b6aaba445ac ""
+  "../StarShapes/Images/mass_const.png" 1700697279 1282996 2293d55677edf03c7421eda9e9df5905 ""
+  "../StarShapes/Images/mass_const_heatmaps.png" 1700697285 463054 8ab3f04c68dbc56a6a9481ac3408db9a ""
+  "../StarShapes/Images/mass_radial.png" 1700693662 822838 c67694649fa3ac94ab845aecb8d31c7a ""
+  "../StarShapes/Images/mass_radial_heatmaps.png" 1700693659 480083 dca27503dae6c4eeeefe5b97242d08c6 ""
+  "/home/pengu5055/Documents/FMF/Year1/MA1/mod107/Latex/main.tex" 1700785397 15320 c764d63d4e01ec783386bd87ca405d20 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -68,6 +74,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty" 1137110062 230 7bc61880b468bfd38aedc173be7c3486 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1459978653 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def" 1663965824 19448 1e988b341dda20961a6b931bcde55519 ""
@@ -100,11 +107,11 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1697067503 4603192 0eff5d941e341e7e38e369b967619829 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1700589378 7863018 31bbc24d0d8bf18208bc619c0d21fc9b ""
   "logo.png" 1697060406 8303 7b15c7eec596b95d22d9e8d01528be9a ""
-  "main.aux" 1700782826 2080 a4043baba0ad87f4eeaa094adc30bd30 "pdflatex"
-  "main.bbl" 1700782479 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
-  "main.out" 1700782826 1534 e200896533b8e2010bb588e26bfb3c7d "pdflatex"
-  "main.tex" 1700782826 8313 b8f5427fe10307cfbc194c055c96e419 ""
-  "main.toc" 1700782826 929 90f922bff65b0cb8436059037ec3a21d "pdflatex"
+  "main.aux" 1700785407 4166 833f04507abbf60e5a59c523440ff611 "pdflatex"
+  "main.bbl" 1700785054 49 0eba253fc001332e731e8aba3f23127b "bibtex main"
+  "main.out" 1700785407 1660 1d4dd9668dadcaefd3dc4f7480914fed "pdflatex"
+  "main.tex" 1700785397 15320 c764d63d4e01ec783386bd87ca405d20 ""
+  "main.toc" 1700785407 1008 b3b377b510f7701a068521b1d727e18a "pdflatex"
   (generated)
   "main.aux"
   "main.log"

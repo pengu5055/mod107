@@ -10,6 +10,7 @@
 \usepackage{ dsfont }
 \usepackage{siunitx}
 \usepackage{multimedia}
+\usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
 \setlength\parindent{0pt}
 
@@ -103,6 +104,10 @@ točk z razmerjem ploščin kroga in kvadrata.
     \frac{4 N_{\mathrm{in}}}{N_{\mathrm{tot}}} \to \pi \>.
 \end{equation}
 
+Skoraj vsa integracija je potekala na mojem Ghetto clustru, kjer je bilo tokrat na voljo 152 jeder. To je bilo fino, ker 
+sem lahko jemal večja števila točk in ker je lahko cluster dobil queue dela in je delal, ko sem jaz spal, čeprav as you might know,
+sem spal predolgo in posledično sem zgrešil rok za oddajo. Duša je želela, telo je reklo ne. \\
+
 \subsection{Zvezdasti lik}
 Za maso zvezdastega lika sem pravzaprav integriral funkcijo $f(x,y,z) = 1$ in jo pomnožil z gostoto, ki je bila postavljena na
 $1$, saj je tako ali tako konstantna. Za vztrajnostni moment pa sem integriral funkcijo $f(x,y,z) = x^2 + y^2 + z^2$. No pravzaprav
@@ -151,10 +156,107 @@ kjer je $d_0$ razdalja v središču reflektorja, $\lambda$ pa povprečna prosta 
 pomislim sicer na to, da mogoče v enem primeru, ko sem spreminjal debelino reflektorja, nisem upošteval tega, da se $d_0$ spreminja. To 
 bi razložilo nekoliko strange rezultate, ki sem jih dobil. \\
 
-
-
-
 \section{Rezultati}
+Okay, kar na rezultate. Skušam se naučiti risanja kompaktificiranih grafov, tako da bi to preiskusil tukaj. \\
+
+\subsection{Zvezdasti lik}
+Lahko bi rekel, da sem več fokusa dal na skaliranje rezultatov, kot pa na dejansko fiziko za problemom. Problem sam po 
+sebi se mi zdi precej dolgočasen in zdi se mi, da se več koristnega naučim, če poskusim narediti numeriko na 
+čim boljši način. Slika (\ref{fig:mass_const}) prikazuje rezultate za maso zvezdastega lika, ko je gostota konstantna.
+oz. kako se le ta spreminja z večanjem številom točk, ki jih generiramo. Tu je mogoče vredno omeniti, da je med 
+številom zahtevanih točk in dejanskim številom točk, ki jih integrator generira, nekaj razlike. To je zaradi 
+celoštevilskega deljenja, ki se zgodi, ko integrator razdeli točke na procesorska jedra. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/mass_const.png}
+    \caption{Masa zvezdastega lika, ko je gostota konstantna.}
+    \label{fig:mass_const}
+\end{figure}
+
+Na levi vidimo, kako se v log-log skali spreminja število vzorcev, kot se spreminja število vzorcev, ki jih 
+sprejmemo. Pomembno je opaziti tudi naračanje časa izvajanja. Na desni vidimo, kako se vrednost mase spreminja,
+dokler ne doseže konvergenco, za dovolj veliko število vzorcev. V ozadju pa je prikazana res CompSci metrika in 
+sicer success rate, oz. kolikšen delež točk je bil znotraj območja, ki ga integriramo, v povprečju čez vse data 
+point-e za različne zahtevane števila vzorcev. S tem lahko narišemo potem srednjo vrednost povprečne vrednosti mase
+in njen ena-sigma interval. \\
+
+Dodatno si lahko pogledamo še naključno naravo rezultatov, če si pogledamo raztros po posameznih procesorskih
+jedrih. To je prikazano na sliki (\ref{fig:mass_const_heatmaps}). Na levi je prikazan rezultat, kjer je na $x$ 
+osi $i$-to jedro, na $y$ osi pa je število zahtevanih vzorcev. Barva prikazuje maso, ki jo je vrnilo posamezno
+jedro. Pričakovali oz. želeli bi, da so barve znotraj vrstice enake, kar pomeni, da je masa neodvisna od tega,
+na katerem jedru se izvaja, ampak kot vidimo je nekaj naključnosti prisotne. Zanimivo mi je bilo potem še 
+narisati čas izvajanja v istem formatu, kar je prikazano na desni. Barve se presenetljivo dobro ujemajo z manjšimi 
+odstopanji. Lahko pa dobro oko opazi prvi namig sistemske napake, ki lahko kvari statistiko glede časa izvajanja 
+na procesorsko jedro. Na levi strani desnega plota je viden malo temnejši pas, ki se pojavi na intervalu 
+$i \in [8, 56]$. Ta efekt bo boljše viden na kasnejših slikah. Vmes pa lahko bralec ugiba, kaj bi lahko bil vzrok
+za to. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/mass_const_heatmaps.png}
+    \caption{Masa zvezdastega lika, ko je gostota konstantna.}
+    \label{fig:mass_const_heatmaps}
+\end{figure}
+
+Sedaj pa si poglejmo še, kako se spreminja masa, ko je gostota odvisna od razdalje od izhodišča. Rezultati so
+prikazani na sliki (\ref{fig:mass_radial}). Na levi je prikazana odvisnost mase od vrednosti $p$, ki je potenca
+v radialnem profilu gostote. V ozadju je tokrat prikazan čas izvajanja v povprečju čez vsa jedra. Število vzorcev 
+je bilo tu postavljeno na $10^7$. Na desni pa je prikazan success rate za različne vrednosti $p$ in njegov 
+raztros po jedrih. Tukaj bi pričakovali, da dobimo popoln šum in res sure enough dobimo sliko, ki zgleda precej 
+naključna. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/mass_radial.png}
+    \caption{Masa zvezdastega lika, ko je gostota odvisna od razdalje od izhodišča.}
+    \label{fig:mass_radial}
+\end{figure}
+
+Tako kot prej lahko pogledamo tudi tu raztros po jedrih, kar je prikazano na sliki (\ref{fig:mass_radial_heatmaps}).
+Na levi je prikazan rezultat za maso, na desni pa za čas izvajanja. Na levi je zanimivo opaziti večje odstopanje
+za večje vrednosti mase. To mi da misliti, da je mogoče relativna napaka pravzaprav konstantna in je tu napaka navidezno 
+večja samo zaradi skale rezultata. Na desni strani pa človek prvo zagleda tisti efekt, ki sem ga omenil prej. Tu se izrazito
+vidi pas, ki sem ga prej omenjal. To je posledica tega, da cluster ni idealiziran in sestavljen iz identičnih delov, ampak 
+sta bili pri računanju uporabljeni dve mašini, ki imata boljše procesorje. Teh jeder je skupaj $48$. Čeprav sta na začetku clustra 
+pride initial shift $8$ jeder od kontrolnega računalnika, ki je tu tudi računal. Pravzaprav, če bi pogledali side-by-side
+Prvih $8$ jeder in potem preostanek od $56$ dalje, bi videli, da je prvih $8$ svetlejših, kar ge tu za tretjo vrsto 
+procesorja, ki je najbolj.. recimo temu budget oriented. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/mass_radial_heatmaps.png}
+    \caption{Masa zvezdastega lika, ko je gostota odvisna od razdalje od izhodišča.}
+    \label{fig:mass_radial_heatmaps}
+\end{figure}
+
+Podobno se vsi ti efekti vidijo tudi pri izračunih za vztrajnostni moment. Ti so za konstantno vrednost gostote
+prikazani na sliki (\ref{fig:angular_const}). Graf je zelo podoben tistemu za maso. Tudi vse količine na njemu so 
+pravzaprav enake, z razliko tega, da je funkcija, ki jo integriramo drugačna.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/angular_const.png}
+    \caption{Vztrajnostni moment zvezdastega lika, ko je gostota konstantna.}
+    \label{fig:angular_const}
+\end{figure}
+
+Tudi tu sem iz radovednosti narisal še raztros po jedrih, kar je prikazano na sliki (\ref{fig:angular_const_heatmaps}).
+Na levi je prikazan rezultat za vztrajnostni moment, na desni pa za čas izvajanja. Da se razlika med jedri boljše vidi, 
+sem tu namesto vrtilne količine risal vrednost, ki je proporcionalna vrtilni količini; pravzaprav samo reskalacija, da 
+so absolutne napake večje. Z risanjem relativne napake sem imel težave z postavitvijo normalizacije barve tako, da bi bile 
+razlike lepo vidne po celem polju. Nekako na občutek pa se mi zdi, da je večja razlika v času izvajanja, kot pa v
+pri masi, kljub temu, da ne bi smelo biti nobenega vpliva. Not sure. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/angular_const_heatmaps.png}
+    \caption{Vztrajnostni moment zvezdastega lika, ko je gostota konstantna.}
+    \label{fig:angular_const_heatmaps}
+\end{figure}
+
+Za primer, ko je gostota odvisna od razdalje od izhodišča, pa so rezultati prikazani na sliki (\ref{fig:angular_radial}).
+
 
 
 \section{Komentarji in izboljšave}
