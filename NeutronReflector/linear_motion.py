@@ -102,5 +102,5 @@ ax[1].set_title("Execution time @ 1e8 samples")
 
 
 plt.tight_layout()
-plt.savefig("./NeutronReflector/Results/linear_motion.png", dpi=700)
+plt.savefig("./NeutronReflector/Images/linear_motion.png", dpi=700)
 plt.show()

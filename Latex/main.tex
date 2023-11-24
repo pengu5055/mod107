@@ -257,7 +257,53 @@ pri masi, kljub temu, da ne bi smelo biti nobenega vpliva. Not sure. \\
 
 Za primer, ko je gostota odvisna od razdalje od izhodišča, pa so rezultati prikazani na sliki (\ref{fig:angular_radial}).
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/angular_radial.png}
+    \caption{Vztrajnostni moment zvezdastega lika, ko je gostota odvisna od razdalje od izhodišča.}
+    \label{fig:angular_radial}
+\end{figure}
 
+Tudi tu sem iz radovednosti narisal še raztros po jedrih, kar je prikazano na sliki (\ref{fig:angular_radial_heatmaps}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../StarShapes/Images/angular_radial_heatmaps.png}
+    \caption{Vztrajnostni moment zvezdastega lika, ko je gostota odvisna od razdalje od izhodišča.}
+    \label{fig:angular_radial_heatmaps}
+\end{figure}
+
+\subsection{Rojevanje žarkov gamma}
+V duhu kompaktnih plotov in sploh ne zaradi tega, ker čas tako hitro teče, sem narisal en plot, ki hopefully uspešno 
+pokaže obe zanimivi odvisnosti pri tej nalogi. To je prikazano na sliki (\ref{fig:XR_scaling}). Na levi je prikazana
+verjetnost za pobeg žarka iz krogle, na desni pa čas izvajanja. Na obeh grafih je prikazana odvisnost od povprečne
+proste poti, ki je \textbf{(PAZI)} v enotah radija krogle. Lepo je vidno kako gre rezultat proti pričakovanim 
+$52\%$ za vrednosti porvpene proste poti, ki so večje blizu $1$. Ne razumem pa čisto popolnoma, zakaj ni ta vrednost 
+konstantna za vse radije. Lahko da je tu kje error on my part, ampak ne vem. Na desni strani pa vidimo, da čas izvajanja 
+pade, ko imamo večjo povprečno prosto pot. Očitno je računski del za absorpcijo žarkov bolj zahteven, kot pa za
+pobeg. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../GammaBirth/Images/XR_scaling.png}
+    \caption{Verjetnost za pobeg žarka iz krogle in čas izvajanja.}
+    \label{fig:XR_scaling}
+\end{figure}
+
+\subsection{Nevtronski reflektor}
+Za konec pa še ta nevtronski reflektor. Meni je bilo pri danih parametrih iz naloge najbolj zanimivo pogledati
+trazmisivnost. To sem potem dodatno še malo razširil in pogledal raztros po procesorjih iz katerega sem efektivno dobil 
+oceno za napako. To je prikazano na sliki (\ref{fig:linear_motion}). Na levi je prikazana povprečna vrednost za prepustnost
+nevtronov skozi reflektor raztresena po jedrih in njena srednja vrednost z ena-sigma intervalom. Na desni pa je, kot je 
+že trend, prikazan povprečen čas izvajanja. Tu se mogoče malo boljše vidi efekt neenakosti procesorjev, kjer je 
+res očiten padec v času izvajanja na jedrih, ki so boljša. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../NeutronReflector/Images/linear_motion.png}
+    \caption{Prepustnost nevtronov skozi reflektor in čas izvajanja.}
+    \label{fig:linear_motion}
+\end{figure}
 
 \section{Komentarji in izboljšave}
 
